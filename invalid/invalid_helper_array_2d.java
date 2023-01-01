@@ -6,7 +6,7 @@ class A{
     //@requires nat_array2[0].length == 5;
     //@requires nat_array2[0][0] >= 0;
     //@helper
-    void test1(){
+    private void test1(){
         nat_array2[0][0] = -1;
         nat_array2[0][0] = 1;
     }
@@ -15,7 +15,7 @@ class A{
     //@requires nat_array2[0].length == 5;
     //@requires nat_array2[0][0] >= 0;
     //@helper
-    void test2(int x){
+    private void test2(int x){
         int[][]/*`@ refinement_type NatArray2*/ local2 = new int[3][3];
         if(x >= 0)local2 = nat_array2;
         if(x <= 0)local2[0][0] = -1;
@@ -26,7 +26,7 @@ class A{
     //@requires nat_array2[0].length == 5;
     //@requires nat_array2[0][0] >= 0;
     //@helper
-    void test3(int x){
+    private void test3(int x){
         int[][]/*`@ refinement_type NatArray2*/ local2 = new int[5][5];
         if(x >= 0)local2 = nat_array2;
 
@@ -43,7 +43,7 @@ class A{
     //@requires nat_array2[0].length == 5;
     //@requires nat_array2[0][0] >= 0;
     //@helper
-    void test4(int x){
+    private void test4(int x){
         int[][]/*`@ refinement_type NatArray2*/ local2 = new int[5][5];
         //@maintaining local2.length == 5;
         //@maintaining local2[0].length == 5;

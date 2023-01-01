@@ -16,7 +16,7 @@ class A{
     //@requires a.a.a.a.a.a.a.x > 0;
     //@requires a.a.a.a.a.a.a.a.x > 0;
     //@helper
-    void helper_m(){
+    private void helper_m(){
         test();
     }
 

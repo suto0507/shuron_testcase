@@ -8,7 +8,7 @@ class A{
 	int/*`@ refinement_type Nat*/ x;
     
     //@helper
-    void test1(){
+    private void test1(){
         x = x - 1;
         x = x + 2;
     }
@@ -16,7 +16,7 @@ class A{
     //@requires 0 < i1 && 0 < i2;
     //@requires array.length > i1 && array.length > i2;
     //@helper
-    void swap(int i1, int i2, int[]/*`@refinement_type DiffArray*/ array){
+    private void swap(int i1, int i2, int[]/*`@refinement_type DiffArray*/ array){
         int tmp = array[i1];
         array[i1] = array[i2];
         array[i2] = tmp;

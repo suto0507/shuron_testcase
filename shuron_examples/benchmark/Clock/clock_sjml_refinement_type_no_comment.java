@@ -100,7 +100,7 @@ class Clock {
   //@ ensures \old(hours) + 1 < HOURS_IN_DAY && minutes == 0 && seconds == 0 ==> hours == \old(hours) + 1;
   //@ ensures \old(hours) + 1 == HOURS_IN_DAY && minutes == 0 && seconds == 0 ==> hours == 0;
   //@ ensures 0 < minutes ==> hours == \old(hours);
-  //@helper
+  //@no_refinement_type
   void tick() {
     my_seconds = my_seconds + 1;
     

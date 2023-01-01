@@ -8,7 +8,7 @@ class A{
     //これは正しい
     //@requires nat_array.length == 5;
     //@requires (\forall int i; 0 <= i && i < nat_array.length; nat_array[i] >= 0);
-    //@helper
+    //@helper pure
     void branch_alias_example(int x){
         int[]/*`@ refinement_type NatArray*/ local = new int[3];
         if(x < 0)local = nat_array;
@@ -21,7 +21,7 @@ class A{
 
     //これも正しい
     //@requires nat_array.length == 5;
-    //@helper
+    //@no_refinement_type
     void method_call_example(int x){
         if(x < 0)nat_array[0] = -1;
         assign(x);
@@ -35,7 +35,7 @@ class A{
     //@ensures nat_array.length == 5;
     //@ensures (\forall int i; 0 <= i && i < nat_array.length; nat_array[i] >= 0);
     //@assignable nat_array;
-    //@helper
+    //@no_refinement_type
     void assign(int x){
         if(x >= 0){
             nat_array = new int[5];

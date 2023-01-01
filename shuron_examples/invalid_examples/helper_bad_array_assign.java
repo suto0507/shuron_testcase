@@ -6,8 +6,8 @@ class A{
     int[]/*`@refinement_type NatArray*/ nat_array2;
 
     //@requires nat_array1.length > 0;
-    //@helper
-    void helper_method(){
+    //@no_refinement_type
+    void no_refinement_type_method(){
         nat_array1[0] = -1;
         nat_array1 = new int[5];
     }

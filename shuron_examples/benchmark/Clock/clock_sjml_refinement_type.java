@@ -177,7 +177,7 @@ class Clock {
    * end of the day (that is, we tick forward from 23:59:59), the clock 
    * should wrap around to 00:00:00.
    */
-  //@helper
+  //@no_refinement_type
   void tick() {
     my_seconds = my_seconds + 1;
     

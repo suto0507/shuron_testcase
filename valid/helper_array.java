@@ -7,7 +7,7 @@ class A{
 
     //@requires nat_array.length == 5;
     //@helper
-    void test2(int x){
+    private void test2(int x){
         if(x > 0)nat_array[0] = -1;
         if(x < 0)nat_array = new int[3];
         if(x > 0)nat_array[0] = 1;
@@ -16,7 +16,7 @@ class A{
     //@requires nat_array.length == 5;
     //@requires (\forall int i; 0 <= i && i < nat_array.length; nat_array[i] >= 0);
     //@helper
-    void test3(int x){
+    private void test3(int x){
         if(x > 0)nat_array[0] = -1;
         //@maintaining nat_array.length == 5;
         //@maintaining (\forall int i; 0 <= i && i < nat_array.length; nat_array[i] >= 0);
@@ -29,7 +29,7 @@ class A{
 
     //@requires nat_array.length == 5;
     //@helper
-    void test2_m(int x){
+    private void test2_m(int x){
         if(x < 0)nat_array[0] = -1;
         assign(x);
         if(x < 0)nat_array[0] = 1;
@@ -38,7 +38,7 @@ class A{
     //@requires nat_array.length == 5;
     //@requires (\forall int i; 0 <= i && i < nat_array.length; nat_array[i] >= 0);
     //@helper
-    void test3_m(int x){
+    private void test3_m(int x){
         if(x < 0)nat_array[0] = -1;
         //@maintaining nat_array.length == 5;
         //@maintaining (\forall int i; 0 <= i && i < nat_array.length; (x >= 0 || i != 0) ==>  nat_array[i] >= 0);
@@ -49,7 +49,7 @@ class A{
     }
 
     //@helper
-    void test4(int[]/*`@ refinement_type NatArray*/ arg_array){
+    private void test4(int[]/*`@ refinement_type NatArray*/ arg_array){
         int[]/*`@ refinement_type NatArray*/ local = new int[3];
         local[0] = -1;
         local = arg_array;
@@ -57,7 +57,7 @@ class A{
 
     //@requires arg_array != nat_array;
     //@helper
-    void test4_m(int[]/*`@ refinement_type NatArray*/ arg_array){
+    private void test4_m(int[]/*`@ refinement_type NatArray*/ arg_array){
         int[]/*`@ refinement_type NatArray*/ local = new int[3];
         hoge(arg_array);
         local[0] = -1;
@@ -72,14 +72,14 @@ class A{
     //@ensures (\forall int i; 0 <= i && i < nat_array.length; nat_array[i] >= 0);
     //@assignable nat_array;
     //@helper
-    void assign(int x){
+    private void assign(int x){
         if(x >= 0){
             nat_array = new int[5];
         }
     }
 
     //@helper pure
-    void hoge(int[]/*`@ refinement_type NatArray*/ arg){
+    private void hoge(int[]/*`@ refinement_type NatArray*/ arg){
         int x = 3;
         //@assert true;
     }

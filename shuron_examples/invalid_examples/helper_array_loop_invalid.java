@@ -5,9 +5,9 @@ class A{
 
     int[]/*`@ refinement_type NatArray*/ nat_array;
 
-   //@requires nat_array.length == 5;
+    //@requires nat_array.length == 5;
     //@requires (\forall int i; 0 <= i && i < nat_array.length; nat_array[i] >= 0);
-    //@helper
+    //@no_refinement_type
     void loop_alias_example(int x){
         int[]/*`@ refinement_type NatArray*/ local = new int[3];
 

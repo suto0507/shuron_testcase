@@ -8,9 +8,12 @@ class A{
 
     //@requires nat2d_array1.length > 0;
     //@requires nat2d_array1[0].length > 0;
-    //@no_refinement_type
-    void no_refinement_type_method(){
-        nat2d_array1[0][0] = -1;
-        nat2d_array2[0] = new int[5][4];
+    //@requires nat2d_array2.length > 0;
+    //@requires nat2d_array3.length > 0;
+    void alias_method(){
+        nat2d_array2[0] = nat2d_array1[0];
+        nat2d_array3[0] = nat2d_array2[0];
+        nat2d_array1[0][0] = 1;
+        
     }
 }

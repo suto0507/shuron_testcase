@@ -9,7 +9,7 @@ class A{
     /*@requires (\forall int  i,j; 
        0 <= i && i < a.length && 0 <= j && j < a.length; i != j ==> a[i] != a[j]);
     */
-    //@helper
+    //@no_refinement_type
     int[]/*`@refinement_type SortArray*/sort(int[] a){
 
         a = hogeSort(a);//aをソートしたとする

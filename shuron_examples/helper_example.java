@@ -5,7 +5,7 @@ class A{
 
     //@requires 0 < i1 && 0 < i2;
     //@requires array.length > i1 && array.length > i2;
-    //@helper
+    //@no_refinement_type
     void swap(int i1, int i2, int[]/*`@refinement_type DiffArray*/ array){
         int tmp = array[i1];
         array[i1] = array[i2];
