@@ -40,3 +40,19 @@ class B3 extends A3{
         super();
     }
 }
+
+class A4{
+    int x;
+
+    //@ensures x == 10;
+    A4(){
+        x = 10;
+    }
+}
+
+
+class B4 extends A4{
+    B4(){
+        //@assert x == 10;
+    }
+}

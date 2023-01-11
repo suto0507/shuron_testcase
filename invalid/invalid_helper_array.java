@@ -63,6 +63,7 @@ class A{
         local = arg_array;
     }
 
+    
     //@requires arg_array != nat_array;
     //@helper
     private void test4_m(int[]/*`@ refinement_type NatArray*/ arg_array){
@@ -71,6 +72,7 @@ class A{
         local[0] = -1;
         local = arg_array;
     }
+    
 
     //@requires x < 0;
     //@assignable \nothing;
@@ -87,7 +89,8 @@ class A{
         //@assert false;
     }
 
-    //@helper pure
+
+    //@helper
     private void hoge(int[]/*`@ refinement_type NatArray*/ arg){
         int x = 3;
         //@assert false;
