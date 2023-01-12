@@ -1,5 +1,0 @@
-{-@ type Even = {v:Int | v mod 2 = 0} @-}
-
-{-@ EvenPlus :: x:Even -> x:Even -> [{v:Even | v == x + y @-}
-EvenPlus      :: Int -> Int
-EvenPlus x y = x + y
